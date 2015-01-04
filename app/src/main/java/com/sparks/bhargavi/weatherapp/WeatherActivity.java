@@ -1,17 +1,25 @@
 package com.sparks.bhargavi.weatherapp;
 
+import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class WeatherActivity extends ActionBarActivity {
+public class WeatherActivity extends BaseActivity {
 
+    private WeatherFragment weatherFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        weatherFragment= new WeatherFragment();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+        ft.replace(R.id.mainScreen, weatherFragment);
+        ft.commit();
     }
 
 
