@@ -10,6 +10,7 @@ public class JSONWeatherParser {
         try {
             JSONObject jsonObject= new JSONObject(jObject);
 
+            location.setCity(jsonObject.getString("name"));
             JSONObject coodJsonObject= jsonObject.getJSONObject("coord");
 
             location.setLat(coodJsonObject.getDouble("lat"));

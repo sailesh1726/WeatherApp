@@ -4,6 +4,15 @@ public class Location {
 
     private Double lat;
     private Double lon;
+    private String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public Double getLat() {
         return lat;
